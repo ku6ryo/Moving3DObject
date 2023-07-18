@@ -1,6 +1,5 @@
 import {
   Document,
-  NodeIO,
   Accessor,
 } from "@gltf-transform/core"
 import { mat4, vec3, quat } from "gl-matrix"
