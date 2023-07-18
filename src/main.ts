@@ -9,7 +9,7 @@ function main() {
     const theta = 2 * Math.PI / divisions * i + Math.PI / 2
     points.push(new Vector2(Math.cos(theta), Math.sin(theta)))
   }
-  const doc = createThickAnimatedObject(points)
+  const doc = createThickAnimatedObject(points, 0.1)
   const io = new NodeIO()
   io.write("thickObj.glb", doc)
 }

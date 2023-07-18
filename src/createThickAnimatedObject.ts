@@ -6,7 +6,7 @@ import { mat4, vec3, quat } from "gl-matrix"
 import { triangulate } from "./triangulate"
 import { Vector2 } from "./Vector2"
 
-export function createThickAnimatedObject(points: Vector2[]) {
+export function createThickAnimatedObject(points: Vector2[], thickness: number) {
   const doc = new Document()
   const buffer = doc.createBuffer("dataBuffer")
   const skin = doc.createSkin("skin")
@@ -76,7 +76,6 @@ export function createThickAnimatedObject(points: Vector2[]) {
   const triangles = triangulate(points)
 
   const numPoints = points.length
-  const thickness = 0.1
   const frontPoints = points.map((v) => [v.x, v.y, -thickness / 2])
   const frontIndices = Array.from({ length: numPoints }).map((_, i) => i)
   const frontTris = triangles.map(t => [t[0], t[2], t[1]])
